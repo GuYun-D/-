@@ -2,21 +2,26 @@
   <main class="screen-bg">
     <div class="header"></div>
 
-    <div class="left-top"></div>
+    <div class="left-top">
+      <Pie :echartsData="charginPile"></Pie>
+    </div>
     <div class="left-bottom"></div>
 
     <div class="right-top"></div>
     <div class="right-center"></div>
     <div class="right-bottom"></div>
 
-    <div class="center">
-    </div>
-    <div class="bottom">
-    </div>
+    <div class="center"></div>
+    <div class="bottom"></div>
   </main>
 </template>
 
 <script setup>
+import { ref } from "vue";
+import { charginPileData } from "./config/home-data";
+import Pie from "../components/pie-echarts.vue";
+
+const charginPile = ref(charginPileData);
 </script>
 
 <style scoped>
@@ -51,7 +56,7 @@
   left: 16px;
   width: 536px;
   height: 443px;
-  background-image: url('../assets/images/bg_left_bottom.svg');
+  background-image: url("../assets/images/bg_left_bottom.svg");
 }
 
 .right-top {
