@@ -5,10 +5,14 @@
     <div class="left-top">
       <Pie :echartsData="charginPile"></Pie>
     </div>
-    <div class="left-bottom"></div>
+    <div class="left-bottom">
+      <Line :echartsData="processMonitoring"></Line>
+    </div>
 
     <div class="right-top"></div>
-    <div class="right-center"></div>
+    <div class="right-center">
+      <Bar :echartsData="chargingStatistics"></Bar>
+    </div>
     <div class="right-bottom"></div>
 
     <div class="center"></div>
@@ -18,10 +22,18 @@
 
 <script setup>
 import { ref } from "vue";
-import { charginPileData } from "./config/home-data";
+import {
+  charginPileData,
+  processMonitoringData,
+  chargingStatisticsData,
+} from "./config/home-data";
 import Pie from "../components/pie-echarts.vue";
+import Line from "../components/line-echarts.vue";
+import Bar from "../components/bar-echarts.vue";
 
 const charginPile = ref(charginPileData);
+const processMonitoring = ref(processMonitoringData);
+const chargingStatistics = ref(chargingStatisticsData);
 </script>
 
 <style scoped>

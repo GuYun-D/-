@@ -36,3 +36,45 @@ export const charginPileData = [
     color: "#00C6FF",
   },
 ];
+
+export const processMonitoringData = [
+  {
+    "name": "正常",
+    "data": [0, 0, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  },
+  {
+    "name": "异常",
+    "data": [0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0]
+  }
+]
+
+export const chargingStatisticsData = [
+  {
+    "name": "一月",
+    "value": 500
+  },
+  {
+    "name": "二月",
+    "value": 2000
+  },
+  {
+    "name": "三月",
+    "value": 3600
+  },
+  {
+    "name": "四月",
+    "value": 1000
+  },
+  {
+    "name": "五月",
+    "value": 1000
+  },
+  {
+    "name": "六月",
+    "value": 2000
+  },
+  {
+    "name": "七月",
+    "value": 4000
+  }
+]
