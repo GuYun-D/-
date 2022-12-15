@@ -13,7 +13,9 @@
     <div class="right-center">
       <Bar :echartsData="chargingStatistics"></Bar>
     </div>
-    <div class="right-bottom"></div>
+    <div class="right-bottom">
+      <Error :dots="error"></Error>
+    </div>
 
     <div class="center"></div>
     <div class="bottom"></div>
@@ -26,21 +28,25 @@ import {
   charginPileData,
   processMonitoringData,
   chargingStatisticsData,
+  errorData,
 } from "./config/home-data";
 import { getPowerScreenData } from "../services";
 import Pie from "../components/pie-echarts.vue";
 import Line from "../components/line-echarts.vue";
 import Bar from "../components/bar-echarts.vue";
+import Error from "../components/error-echarts.vue";
 
 const charginPile = ref(charginPileData);
 const processMonitoring = ref(processMonitoringData);
 const chargingStatistics = ref(chargingStatisticsData);
+const error = ref(errorData);
 
 getPowerScreenData().then((res) => {
   if (res.code === 200) {
-    (charginPile.value = res.data.chargingPile.data),
-      (processMonitoring.value = res.data.processMonitoring.data),
-      (chargingStatistics.value = res.data.chargingStatistics.data);
+    charginPile.value = res.data.chargingPile.data;
+    processMonitoring.value = res.data.processMonitoring.data;
+    chargingStatistics.value = res.data.chargingStatistics.data;
+    error.value = res.data.exceptionMonitoring.data;
   }
 });
 </script>
