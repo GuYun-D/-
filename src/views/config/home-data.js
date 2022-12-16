@@ -83,5 +83,31 @@ export const errorData = [
   { id: 1, name: "异常1", value: 5, dur: "10s", begin: "0s" },
   { id: 2, name: "异常2", value: 3, dur: "10s", begin: "-3s" },
   { id: 2, name: "异常3", value: 5, dur: "10s", begin: "-5s" },
-
 ]
+
+export const shujufenxu = [
+  {
+    id: 1,
+    title: "充电桩总数(个)",
+    totalNum: 8579.9,
+    unit: "万",
+    percentage: 79.5,
+    isUp: true,
+  },
+  {
+    id: 2,
+    title: "年增长总数(个)",
+    totalNum: 2856.6,
+    unit: "万",
+    percentage: 88.9,
+    isUp: true,
+  },
+  {
+    id: 3,
+    title: "月增长总数(个)",
+    totalNum: 1189.3,
+    unit: "万",
+    percentage: 62,
+    isUp: false,
+  },
+];
