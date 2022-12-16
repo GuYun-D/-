@@ -1208,32 +1208,36 @@ import gasp from "gsap";
 onMounted(() => {
   const timeline = gasp.timeline();
 
-  timeline.fromTo(
-    "#dongxiao",
-    {
-      scale: 0.8,
-      y: 50
-    },
-    {
-      duration: 1,
-      scale: 1,
-      y: 0
-    }
-  ).fromTo("#center-house", {
-    duration: 1,
-    scale: 0.6,
-    transformOrigin: 'bottom',
-    opacity: 0.7,
-    y: 30
-  }, {
-    duration: 1,
-    scale: 1,
-    transformOrigin: 'bottom',
-    opacity: 1,
-    y: 0
-  })
-
-
+  timeline
+    .fromTo(
+      "#dongxiao",
+      {
+        scale: 0.8,
+        y: 50,
+      },
+      {
+        duration: 1,
+        scale: 1,
+        y: 0,
+      }
+    )
+    .fromTo(
+      "#center-house",
+      {
+        duration: 1,
+        scale: 0.6,
+        transformOrigin: "bottom",
+        opacity: 0.7,
+        y: 30,
+      },
+      {
+        duration: 1,
+        scale: 1,
+        transformOrigin: "bottom",
+        opacity: 1,
+        y: 0,
+      }
+    );
 });
 </script>
 
@@ -1559,6 +1563,7 @@ onMounted(() => {
 .cls-54 {
   fill: #fff;
   opacity: 0.9;
+  will-change: opacity;
 }
 
 .cus-cls-blue {
@@ -1566,6 +1571,7 @@ onMounted(() => {
   opacity: 0.9;
   /* filter: url(#filter-2-1); */
   box-shadow: 0 1px 1px #f40;
+  will-change: opacity;
 }
 
 .cus-cls-orange {
@@ -1573,6 +1579,7 @@ onMounted(() => {
   opacity: 0.9;
   /* filter: url(#filter-2-1); */
   box-shadow: 0 1px 1px #f40;
+  will-change: opacity;
 }
 
 .cls-40 {
