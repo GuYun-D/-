@@ -1191,7 +1191,6 @@
         </g>
       </g>
     </svg>
-
     <!-- 烟花特效 -->
     <img class="lingxA" src="../assets/images/ling/lingxA.png" />
     <img class="lingxB" src="../assets/images/ling/lingxB.png" />
@@ -1203,6 +1202,39 @@
 </template>
 
 <script setup>
+import { onMounted } from "vue";
+import gasp from "gsap";
+
+onMounted(() => {
+  const timeline = gasp.timeline();
+
+  timeline.fromTo(
+    "#dongxiao",
+    {
+      scale: 0.8,
+      y: 50
+    },
+    {
+      duration: 1,
+      scale: 1,
+      y: 0
+    }
+  ).fromTo("#center-house", {
+    duration: 1,
+    scale: 0.6,
+    transformOrigin: 'bottom',
+    opacity: 0.7,
+    y: 30
+  }, {
+    duration: 1,
+    scale: 1,
+    transformOrigin: 'bottom',
+    opacity: 1,
+    y: 0
+  })
+
+
+});
 </script>
 
 <style scoped>
