@@ -17,7 +17,9 @@
       <Error :dots="error"></Error>
     </div>
 
-    <div class="center"></div>
+    <div class="center">
+      <Center></Center>
+    </div>
     <div class="bottom"></div>
   </main>
 </template>
@@ -35,6 +37,7 @@ import Pie from "../components/pie-echarts.vue";
 import Line from "../components/line-echarts.vue";
 import Bar from "../components/bar-echarts.vue";
 import Error from "../components/error-echarts.vue";
+import Center from '../components/center.vue'
 
 const charginPile = ref(charginPileData);
 const processMonitoring = ref(processMonitoringData);
@@ -125,8 +128,9 @@ getPowerScreenData().then((res) => {
   bottom: 272px;
   width: 823px;
   height: 710px;
+  text-align: center;
 
-  border: 2px solid rgb(255, 255, 255);
+  /* border: 2px solid rgb(255, 255, 255); */
 }
 
 .bottom {
